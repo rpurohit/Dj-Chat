@@ -31,7 +31,7 @@ def login_view(request):
         'form': form,
     }
     
-    return render(request, "chatapp/login.html", context)
+    return render(request, "login.html", context)
 
 # Registration function
 def register_view(request):
@@ -60,7 +60,7 @@ def register_view(request):
         'form': form,
     }
     
-    return render(request, "chatapp/register.html", context)
+    return render(request, "register.html", context)
 
 # Logout function
 def logout_view(request):
@@ -77,7 +77,7 @@ def select_room(request):
     '''
         This function is redirecting the user to the index page.
     '''
-    return render(request, 'chatapp/index.html', {})
+    return render(request, 'index.html', {})
 
 # Enter room function
 @login_required
@@ -85,7 +85,7 @@ def room(request, room_name):
     '''
         This function is used to connect users to the room.
     '''
-    return render(request, 'chatapp/chat.html', {
+    return render(request, 'chat.html', {
         'room_name': room_name,
         'user_name': request.user.username
     })
